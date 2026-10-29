@@ -36,3 +36,12 @@ opt.undofile = true         -- undo history survives closing the file
 opt.confirm = true          -- ask to save instead of failing on :q with unsaved changes
 opt.updatetime = 250        -- faster CursorHold events (used by git signs, diagnostics)
 opt.timeoutlen = 300        -- ms to wait for the next key in a mapping sequence
+
+-- Clipboard: y/p/d use the Windows clipboard (via win32yank.exe on WSL)
+opt.clipboard = "unnamedplus"
+
+-- Disable remote-plugin providers (none of the plugins need them)
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
