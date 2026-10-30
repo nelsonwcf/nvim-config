@@ -25,6 +25,13 @@ if grep -qi microsoft /proc/version; then
   fi
 fi
 
+echo "==> tree-sitter CLI (prebuilt; Debian's is too old for nvim-treesitter)"
+if ! command -v tree-sitter >/dev/null; then
+  curl -sL https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-x64.gz \
+    | gunzip | sudo tee /usr/local/bin/tree-sitter >/dev/null
+  sudo chmod +x /usr/local/bin/tree-sitter
+fi
+
 echo "==> Neovim"
 if command -v nvim >/dev/null; then
   nvim --version | head -1
