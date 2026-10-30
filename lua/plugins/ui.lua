@@ -31,7 +31,12 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = { preset = "modern" },
+    opts = { 
+      preset = "modern",
+      spec = {
+        { "<leader>f", group = "find" },
+      },
+    },
     keys = {
       {
         "<leader>?",
