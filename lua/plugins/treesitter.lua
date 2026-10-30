@@ -12,6 +12,7 @@ return {
         "markdown", "markdown_inline", "regex",
         "html", "css", "javascript", "typescript",
         "dockerfile", "gitcommit", "diff",
+        "sql", "rust",
       })
 
       -- Enable treesitter features for every buffer that has a parser
