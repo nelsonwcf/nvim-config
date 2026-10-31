@@ -41,6 +41,7 @@ return {
         { "<leader>g", group = "git" },
         { "<leader>d", group = "debug" },
         { "<leader>r", group = "run" },
+        { "<leader>a", group = "ai" },
       },
     },
     keys = {
