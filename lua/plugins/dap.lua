@@ -151,6 +151,38 @@ return {
         vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
       )
 
+      -- Rust: codelldb (mason puts it on PATH; talks DAP over stdio)
+      dap.adapters.codelldb = {
+        type = "executable",
+        command = "codelldb",
+      }
+
+      dap.configurations.rust = {
+        {
+          name = "Build and debug",
+          type = "codelldb",
+          request = "launch",
+          program = function()
+            -- Build first so the debugger runs the current code
+            local out = vim.fn.system({ "cargo", "build" })
+            if vim.v.shell_error ~= 0 then
+              vim.notify(out, vim.log.levels.ERROR)
+              return dap.ABORT
+            end
+            -- Guess the binary name from the folder name; editable at the prompt
+            local cwd = vim.fn.getcwd()
+            return vim.fn.input(
+              "Executable: ",
+              cwd .. "/target/debug/" .. vim.fn.fnamemodify(cwd, ":t"),
+              "file"
+            )
+          end,
+          cwd = "${workspaceFolder}",
+          sourceLanguages = { "rust" }, -- readable display of Vec, String, Option, etc.
+          stopOnEntry = false,
+        },
+      }
+
       -- Open the panels when a session starts, close them when it ends
       local view = require("dap-view")
       dap.listeners.before.attach["dap-view"] = function()

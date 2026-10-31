@@ -20,6 +20,7 @@ return {
         "sqruff", -- SQL linter + formatter + LSP (Rust)
         "stylua", -- Lua formatter (Rust)
         "debugpy", -- Python debug adapter
+        "codelldb", -- Rust / C / C++ debug adapter
       },
     },
   },
