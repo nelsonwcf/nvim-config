@@ -16,3 +16,6 @@ map("v", ">", ">gv")
 -- Move selected lines up/down in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Double Esc leaves terminal mode in any terminal (single Esc still reaches the program)
+map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

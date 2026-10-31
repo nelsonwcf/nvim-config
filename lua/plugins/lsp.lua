@@ -11,14 +11,15 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     opts = {
       ensure_installed = {
-        "ty",                   -- Python LSP / type checker (Rust)
-        "ruff",                 -- Python linter + formatter (Rust)
-        "lua-language-server",  -- Lua LSP
+        "ty", -- Python LSP / type checker (Rust)
+        "ruff", -- Python linter + formatter (Rust)
+        "lua-language-server", -- Lua LSP
         "bash-language-server", -- Bash LSP
-        "shellcheck",           -- Bash Linter (used by bash-language-server)
-        "shfmt",                -- Bash formatter
-        "sqruff",               -- SQL linter + formatter + LSP (Rust)
-        "stylua",               -- Lua formatter (Rust)
+        "shellcheck", -- Bash Linter (used by bash-language-server)
+        "shfmt", -- Bash formatter
+        "sqruff", -- SQL linter + formatter + LSP (Rust)
+        "stylua", -- Lua formatter (Rust)
+        "debugpy", -- Python debug adapter
       },
     },
   },
@@ -39,7 +40,7 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     config = function()
       vim.diagnostic.config({
-        virtual_text = true,  -- show messages at the end of the line
+        virtual_text = true, -- show messages at the end of the line
         severity_sort = true, -- errors above warnings
         float = { border = "rounded" },
       })

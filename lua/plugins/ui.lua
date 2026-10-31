@@ -38,6 +38,7 @@ return {
         { "<leader>c", group = "code" },
         { "<leader>t", group = "toggle" },
         { "<leader>g", group = "git" },
+        { "<leader>d", group = "debug" },
       },
     },
     keys = {
