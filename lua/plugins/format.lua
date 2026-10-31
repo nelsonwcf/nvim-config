@@ -11,7 +11,7 @@ return {
         desc = "Format buffer / selection",
       },
       {
-        "<leader>tf",
+        "<leader>uf",
         function()
           vim.g.disable_autoformat = not vim.g.disable_autoformat
           vim.notify("Format on save: " .. (vim.g.disable_autoformat and "off" or "on"))

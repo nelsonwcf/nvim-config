@@ -17,7 +17,7 @@ return {
         map("v", "<leader>gr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, "Reset selection")
         map("n", "<leader>gp", gs.preview_hunk_inline, "Preview hunk")
         map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, "Blame line")
-        map("n", "<leader>tb", gs.toggle_current_line_blame, "Toggle inline blame")
+        map("n", "<leader>ub", gs.toggle_current_line_blame, "Toggle inline blame")
       end,
     },
   },

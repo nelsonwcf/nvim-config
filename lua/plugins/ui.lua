@@ -36,7 +36,8 @@ return {
       spec = {
         { "<leader>f", group = "find" },
         { "<leader>c", group = "code" },
-        { "<leader>t", group = "toggle" },
+        { "<leader>u", group = "toggle" },
+        { "<leader>t", group = "test" },
         { "<leader>g", group = "git" },
         { "<leader>d", group = "debug" },
       },
