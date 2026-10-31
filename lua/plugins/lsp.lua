@@ -2,7 +2,7 @@ return {
   -- Installer for external tools: LSP servers, formatters, linters, debuggers
   {
     "mason-org/mason.nvim",
-    opts = {},  -- also puts mason's bin directory on Neovim's PATH
+    opts = {}, -- also puts mason's bin directory on Neovim's PATH
   },
 
   -- The list of tools mason should keep installed (installs missing ones at startup)
@@ -18,6 +18,7 @@ return {
         "shellcheck",           -- Bash Linter (used by bash-language-server)
         "shfmt",                -- Bash formatter
         "sqruff",               -- SQL linter + formatter + LSP (Rust)
+        "stylua",               -- Lua formatter (Rust)
       },
     },
   },
@@ -38,8 +39,8 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     config = function()
       vim.diagnostic.config({
-        virtual_text = true,    -- show messages at the end of the line
-        severity_sort = true,   -- errors above warnings
+        virtual_text = true,  -- show messages at the end of the line
+        severity_sort = true, -- errors above warnings
         float = { border = "rounded" },
       })
 

@@ -2,8 +2,8 @@ return {
   -- Colorscheme
   {
     "folke/tokyonight.nvim",
-    lazy = false,      -- load at startup, not on demand
-    priority = 1000,   -- load before other plugins so they pick up its colors
+    lazy = false, -- load at startup, not on demand
+    priority = 1000, -- load before other plugins so they pick up its colors
     opts = { style = "night" },
     config = function(_, opts)
       require("tokyonight").setup(opts)
@@ -14,15 +14,15 @@ return {
   -- Statusline (bottom bar: mode, git branch, diagnostics, file, position)
   {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",  -- load right after startup finishes
+    event = "VeryLazy", -- load right after startup finishes
     dependencies = { "nvim-tree/nvim-web-devicons" },
     init = function()
-      vim.opt.showmode = false  -- lualine shows the mode; hide the built-in "-- INSERT --"
+      vim.opt.showmode = false -- lualine shows the mode; hide the built-in "-- INSERT --"
     end,
     opts = {
       options = {
         theme = "tokyonight",
-        globalstatus = true,  -- one statusline for all splits
+        globalstatus = true, -- one statusline for all splits
       },
     },
   },
@@ -31,16 +31,20 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = { 
+    opts = {
       preset = "modern",
       spec = {
         { "<leader>f", group = "find" },
+        { "<leader>c", group = "code" },
+        { "<leader>t", group = "toggle" },
       },
     },
     keys = {
       {
         "<leader>?",
-        function() require("which-key").show({ global = false }) end,
+        function()
+          require("which-key").show({ global = false })
+        end,
         desc = "Keymaps for this buffer",
       },
     },
