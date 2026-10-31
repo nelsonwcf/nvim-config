@@ -37,6 +37,7 @@ return {
         { "<leader>f", group = "find" },
         { "<leader>c", group = "code" },
         { "<leader>t", group = "toggle" },
+        { "<leader>g", group = "git" },
       },
     },
     keys = {
