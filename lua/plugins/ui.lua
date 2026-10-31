@@ -40,6 +40,7 @@ return {
         { "<leader>t", group = "test" },
         { "<leader>g", group = "git" },
         { "<leader>d", group = "debug" },
+        { "<leader>r", group = "run" },
       },
     },
     keys = {
