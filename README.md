@@ -6,9 +6,10 @@ Personal Neovim configuration (Lua, lazy.nvim). Targets Neovim 0.12+ on Debian 1
 
 1. Build and install Neovim 0.12+ from source: https://github.com/neovim/neovim/blob/master/BUILD.md
 2. (Rust) Install rustup: https://rustup.rs
-3. Clone this repo:
+3. Install git and clone this repo (HTTPS works without an SSH key, since the repo is public):
    ```bash
-   git clone git@github.com:nelsonwcf/nvim-config.git ~/.config/nvim
+   sudo apt install -y git
+   git clone https://github.com/nelsonwcf/nvim-config.git ~/.config/nvim
    ```
 4. Install system dependencies (apt packages, fd link, tree-sitter CLI, win32yank on WSL, Rust components):
    ```bash
