@@ -14,6 +14,10 @@ return {
         "ty",                   -- Python LSP / type checker (Rust)
         "ruff",                 -- Python linter + formatter (Rust)
         "lua-language-server",  -- Lua LSP
+        "bash-language-server", -- Bash LSP
+        "shellcheck",           -- Bash Linter (used by bash-language-server)
+        "shfmt",                -- Bash formatter
+        "sqruff",               -- SQL linter + formatter + LSP (Rust)
       },
     },
   },
@@ -39,7 +43,13 @@ return {
         float = { border = "rounded" },
       })
 
-      vim.lsp.enable({ "ty", "ruff", "lua_ls" })
+      vim.lsp.config("rust_analyzer", {
+        settings = {
+          ["rust-analyzer"] = { check = { command = "clippy" } },
+        },
+      })
+
+      vim.lsp.enable({ "ty", "ruff", "lua_ls", "rust_analyzer", "bashls", "sqruff" })
 
       -- Runs each time a server attaches to a buffer
       vim.api.nvim_create_autocmd("LspAttach", {

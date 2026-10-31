@@ -32,6 +32,12 @@ if ! command -v tree-sitter >/dev/null; then
   sudo chmod +x /usr/local/bin/tree-sitter
 fi
 
+echo "==> Rust toolchain (rustup) + components"
+if [ ! -x "$HOME/.cargo/bin/rustup" ]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+fi
+"$HOME/.cargo/bin/rustup" component add rust-analyzer rustfmt clippy
+
 echo "==> Neovim"
 if command -v nvim >/dev/null; then
   nvim --version | head -1
