@@ -41,8 +41,9 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     config = function()
       vim.diagnostic.config({
-        virtual_text = true, -- show messages at the end of the line
+        virtual_text = { current_line = true }, -- show messages at the end of the line
         severity_sort = true, -- errors above warnings
+        underline = false,
         float = { border = "rounded" },
       })
 
